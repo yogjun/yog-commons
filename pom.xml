@@ -9,6 +9,11 @@
     <version>${revision}</version>
     <packaging>pom</packaging>
 
+    <modules>
+        <module>yog-kits-parent</module>
+        <module>yog-enhance-parent</module>
+    </modules>
+
     <properties>
         <revision>1.0.0-SNAPSHOT</revision>
         <maven.deploy.skip>false</maven.deploy.skip>
