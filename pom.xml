@@ -13,6 +13,7 @@
         <module>yog-kits-parent</module>
         <module>yog-enhance-parent</module>
         <module>yog-api-parent</module>
+        <module>yog-commons-starters</module>
     </modules>
 
     <properties>
@@ -21,6 +22,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--        public-->
+        <hutool.version>5.8.26</hutool.version>
     </properties>
     <licenses>
         <license>
@@ -29,6 +32,26 @@
             <distribution>manual</distribution>
         </license>
     </licenses>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+                <type>pom</type>
+                <!-- 注意这里是import -->
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
 
