@@ -12,6 +12,7 @@
     <modules>
         <module>yog-kits-parent</module>
         <module>yog-enhance-parent</module>
+        <module>yog-api-parent</module>
     </modules>
 
     <properties>
