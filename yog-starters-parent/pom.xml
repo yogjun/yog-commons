@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-commons-starters</artifactId>
+    <artifactId>yog-starters-parent</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

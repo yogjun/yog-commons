@@ -13,7 +13,7 @@
         <module>yog-kits-parent</module>
         <module>yog-enhance-parent</module>
         <module>yog-api-parent</module>
-        <module>yog-commons-starters</module>
+        <module>yog-starters-parent</module>
     </modules>
 
     <properties>
@@ -23,6 +23,8 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--        public-->
+        <spring.framework.version>5.2.15.RELEASE</spring.framework.version>
+        <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <hutool.version>5.8.26</hutool.version>
     </properties>
     <licenses>
@@ -36,11 +38,13 @@
         <dependencies>
             <dependency>
                 <groupId>cn.hutool</groupId>
-                <artifactId>hutool-bom</artifactId>
+                <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
-                <type>pom</type>
-                <!-- 注意这里是import -->
-                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-api-enum</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -54,7 +58,6 @@
     </dependencies>
     <build>
         <plugins>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>flatten-maven-plugin</artifactId>
@@ -84,6 +87,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>
@@ -92,6 +96,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
                 <configuration>
                     <skip>true</skip>
                 </configuration>

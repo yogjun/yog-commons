@@ -13,7 +13,7 @@
     <artifactId>yog-kits-parent</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>common-kits</module>
+        <module>yog-kits-common</module>
     </modules>
 
     <properties>
