@@ -1,2 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.yogjun.starter.auth.YogAuthAutoConfiguration
