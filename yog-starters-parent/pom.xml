@@ -14,7 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>yog-starter-authorization</module>
-        <module>yog-starter-i18</module>
+        <module>yog-starter-i18n</module>
     </modules>
 
     <properties>

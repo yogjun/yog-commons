@@ -15,6 +15,7 @@
     <modules>
         <module>yog-api-exception</module>
         <module>yog-api-enum</module>
+        <module>yog-api-commons</module>
     </modules>
 
     <properties>

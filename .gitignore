@@ -45,3 +45,8 @@ bin/
 
 ###  pom  ###
 .flattened-pom.xml
+*.jar
+*.class
+pom.properties
+inputFiles.lst
+createdFiles.lst

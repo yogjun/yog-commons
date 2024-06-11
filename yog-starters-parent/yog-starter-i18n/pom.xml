@@ -10,7 +10,7 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-starter-authorization</artifactId>
+    <artifactId>yog-starter-i18n</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,11 +18,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>${spring.boot.version}</version>
-        </dependency>
-    </dependencies>
 </project>

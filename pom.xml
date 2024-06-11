@@ -46,6 +46,11 @@
                 <artifactId>yog-api-enum</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-api-commons-bean</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

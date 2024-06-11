@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-starters-parent</artifactId>
+        <artifactId>yog-api-commons</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-starter-authorization</artifactId>
+    <artifactId>yog-api-commons-bean</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -18,11 +18,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>${spring.boot.version}</version>
-        </dependency>
-    </dependencies>
 </project>
