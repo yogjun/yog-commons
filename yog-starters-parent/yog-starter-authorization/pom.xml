@@ -5,17 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-commons</artifactId>
+        <artifactId>yog-starters-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-starters-parent</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>yog-starter-authorization</module>
-        <module>yog-starter-i18</module>
-    </modules>
+    <artifactId>yog-starter-authorization</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
