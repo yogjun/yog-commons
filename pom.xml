@@ -57,6 +57,19 @@
                 <artifactId>yog-api-commons-repository</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-kits-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <!-- Spring Boot Dependency  -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

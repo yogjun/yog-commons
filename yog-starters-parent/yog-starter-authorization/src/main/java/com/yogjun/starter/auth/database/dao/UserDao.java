@@ -1,4 +1,6 @@
-package com.yogjun.starter.auth.repository.dao;
+package com.yogjun.starter.auth.database.dao;
+
+import com.yogjun.starter.auth.database.UserDTO;
 
 /**
  * {@link UserDao}
@@ -9,5 +11,5 @@ package com.yogjun.starter.auth.repository.dao;
 public interface UserDao {
 
   /** 保存用户信息 */
-  void save();
+  void save(UserDTO userDTO);
 }

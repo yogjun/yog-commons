@@ -1,6 +1,6 @@
 package com.yogjun.starter.auth.config;
 
-import com.yogjun.starter.auth.enums.DBType;
+import com.yogjun.starter.auth.api.enums.DBType;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

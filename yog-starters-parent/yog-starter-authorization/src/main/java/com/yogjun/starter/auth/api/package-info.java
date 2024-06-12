@@ -2,6 +2,6 @@
  * {@link package-info}
  *
  * @author <a href="mailto:280536928@qq.com">yogjun</a>
- * @version ${project.version} - 2024/6/11
+ * @version ${project.version} - 2024/6/12
  */
-package com.yogjun.starter.auth.repository;
+package com.yogjun.starter.auth.api;

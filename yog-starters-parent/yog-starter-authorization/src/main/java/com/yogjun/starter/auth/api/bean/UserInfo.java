@@ -1,4 +1,4 @@
-package com.yogjun.starter.auth.bean;
+package com.yogjun.starter.auth.api.bean;
 
 import lombok.Data;
 

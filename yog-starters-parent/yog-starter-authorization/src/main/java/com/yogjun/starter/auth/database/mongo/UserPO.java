@@ -1,4 +1,4 @@
-package com.yogjun.starter.auth.repository.mongo;
+package com.yogjun.starter.auth.database.mongo;
 
 import com.yogjun.api.commons.repository.BasePO;
 import lombok.Getter;
@@ -20,4 +20,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(UserPO.TABLE_NAME)
 public class UserPO extends BasePO {
   public static final String TABLE_NAME = "user_info";
+
+  private String username;
+  private String password;
+  private String countryCode = "86";
+  private String phone;
+  private String email;
 }

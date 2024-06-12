@@ -1,4 +1,4 @@
-package com.yogjun.starter.auth.enums;
+package com.yogjun.starter.auth.api.enums;
 
 /**
  * {@link DBType}
