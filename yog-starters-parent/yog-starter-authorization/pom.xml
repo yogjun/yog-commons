@@ -24,5 +24,9 @@
             <artifactId>spring-boot-autoconfigure</artifactId>
             <version>${spring.boot.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-api-commons-repository</artifactId>
+        </dependency>
     </dependencies>
 </project>

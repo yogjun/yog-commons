@@ -50,3 +50,4 @@ bin/
 pom.properties
 inputFiles.lst
 createdFiles.lst
+**/target/*

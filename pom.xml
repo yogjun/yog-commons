@@ -24,6 +24,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--        public-->
         <spring.framework.version>5.2.15.RELEASE</spring.framework.version>
+        <spring.framework.data.version>3.0.9.RELEASE</spring.framework.data.version>
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <hutool.version>5.8.26</hutool.version>
     </properties>
@@ -49,6 +50,11 @@
             <dependency>
                 <groupId>com.yogjun</groupId>
                 <artifactId>yog-api-commons-bean</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-api-commons-repository</artifactId>
                 <version>${revision}</version>
             </dependency>
         </dependencies>

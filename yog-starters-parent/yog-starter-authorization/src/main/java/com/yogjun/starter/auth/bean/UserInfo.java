@@ -11,7 +11,7 @@ import lombok.Data;
 @Data
 public class UserInfo {
   /** 唯一标识 */
-  private Long uid;
+  private Long id;
 
   /** 用户名 */
   private String username;
