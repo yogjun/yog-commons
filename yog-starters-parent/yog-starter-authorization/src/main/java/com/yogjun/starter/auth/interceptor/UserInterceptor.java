@@ -1,7 +1,9 @@
 package com.yogjun.starter.auth.interceptor;
 
+import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import com.yogjun.commont.kits.utils.StringUtils;
+import com.yogjun.starter.auth.annotation.Identity;
 import com.yogjun.starter.auth.api.bean.UserInfo;
 import com.yogjun.starter.auth.api.constants.Constants;
 import com.yogjun.starter.auth.api.exceptions.AuthException;
@@ -11,6 +13,8 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.annotation.AnnotatedElementUtils;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
@@ -33,8 +37,14 @@ public class UserInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(
       HttpServletRequest request, HttpServletResponse response, Object handler) {
-    String sessionId = this.getSessionId(request);
-    loginHandle(sessionId);
+
+    if (handler instanceof HandlerMethod
+        && CollUtil.isNotEmpty(
+            AnnotatedElementUtils.findAllMergedAnnotations(
+                ((HandlerMethod) handler).getMethod(), Identity.class))) {
+      String sessionId = this.getSessionId(request);
+      loginHandle(sessionId);
+    }
     return true;
   }
 
