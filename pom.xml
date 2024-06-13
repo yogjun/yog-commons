@@ -62,6 +62,11 @@
                 <artifactId>yog-kits-common</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-api-exception</artifactId>
+                <version>${revision}</version>
+            </dependency>
             <!-- Spring Boot Dependency  -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>

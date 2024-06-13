@@ -1,7 +1,11 @@
 package com.yogjun.starter.auth;
 
+import com.yogjun.starter.auth.api.bean.UserInfo;
 import com.yogjun.starter.auth.config.AuthConfiguration;
+import com.yogjun.starter.auth.interceptor.UserInterceptor;
+import com.yogjun.starter.auth.service.UserService;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -12,4 +16,20 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @ComponentScan("com.yogjun.starter.auth")
 @EnableConfigurationProperties(AuthConfiguration.class)
-public class YogAuthAutoConfiguration {}
+public class YogAuthAutoConfiguration {
+
+  @Bean
+  public UserService ldapLoginUserService() {
+    return new UserService() {
+      @Override
+      public UserInfo getUserInfoBySessionId(String sessionId) {
+        return null;
+      }
+    };
+  }
+
+  @Bean
+  public UserInterceptor ldapUserInterceptor(UserService userService) {
+    return new UserInterceptor(userService);
+  }
+}

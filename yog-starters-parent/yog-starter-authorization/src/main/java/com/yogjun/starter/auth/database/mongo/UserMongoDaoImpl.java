@@ -2,7 +2,7 @@ package com.yogjun.starter.auth.database.mongo;
 
 import com.yogjun.commont.kits.BeanUtil;
 import com.yogjun.starter.auth.database.UserDTO;
-import com.yogjun.starter.auth.database.dao.UserDao;
+import com.yogjun.starter.auth.database.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;

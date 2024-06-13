@@ -1,6 +1,4 @@
-package com.yogjun.starter.auth.database.dao;
-
-import com.yogjun.starter.auth.database.UserDTO;
+package com.yogjun.starter.auth.database;
 
 /**
  * {@link UserDao}
