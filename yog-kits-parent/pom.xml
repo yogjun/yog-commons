@@ -14,6 +14,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>yog-kits-common</module>
+        <module>yog-kits-mock</module>
     </modules>
 
     <properties>
@@ -22,4 +23,10 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+        </dependency>
+    </dependencies>
 </project>

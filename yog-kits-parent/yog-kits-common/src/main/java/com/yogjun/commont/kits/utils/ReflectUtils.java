@@ -131,7 +131,7 @@ public class ReflectUtils {
     return method;
   }
 
-  protected static boolean isBeanPropertyReadMethod(Method method) {
+  public static boolean isBeanPropertyReadMethod(Method method) {
     return method != null
         && Modifier.isPublic(method.getModifiers())
         && !Modifier.isStatic(method.getModifiers())
@@ -143,7 +143,7 @@ public class ReflectUtils {
         && (!"get".equals(method.getName()) && !"is".equals(method.getName()));
   }
 
-  protected static String getPropertyNameFromBeanReadMethod(Method method) {
+  public static String getPropertyNameFromBeanReadMethod(Method method) {
     if (isBeanPropertyReadMethod(method)) {
       if (method.getName().startsWith("get")) {
         return method.getName().substring(3, 4).toLowerCase() + method.getName().substring(4);

@@ -6,11 +6,10 @@
     <parent>
         <groupId>com.yogjun</groupId>
         <artifactId>yog-kits-parent</artifactId>
-        <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>yog-kits-common</artifactId>
+    <artifactId>yog-kits-mock</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -19,6 +18,20 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-kits-common</artifactId>
+        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>org.mockito</groupId>-->
+        <!--            <artifactId>mockito-core</artifactId>-->
+        <!--            <version>2.7.19</version>-->
+        <!--        </dependency>-->
+        <dependency>
+            <groupId>net.andreinc</groupId>
+            <artifactId>mockneat</artifactId>
+            <version>0.4.8</version>
+        </dependency>
     </dependencies>
 
 </project>
