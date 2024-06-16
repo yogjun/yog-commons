@@ -2,6 +2,7 @@ package com.yogjun.starter.auth.api.response;
 
 import com.yogjun.starter.auth.database.UserDTO;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * {@link LoginResponse}
@@ -10,4 +11,5 @@ import lombok.Data;
  * @version ${project.version} - 2024/6/13
  */
 @Data
+@EqualsAndHashCode(callSuper = true)
 public class LoginResponse extends UserDTO {}

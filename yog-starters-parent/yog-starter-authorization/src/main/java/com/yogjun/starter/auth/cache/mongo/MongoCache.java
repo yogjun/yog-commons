@@ -1,6 +1,7 @@
 package com.yogjun.starter.auth.cache.mongo;
 
-import com.yogjun.api.commons.repository.BasePO;
+import java.time.LocalDateTime;
+import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -18,4 +19,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @FieldNameConstants
 @Document("yog_cache")
-public class MongoCache extends BasePO {}
+public class MongoCache<T> {
+  @Id private String id;
+  private T value;
+  private LocalDateTime createTime;
+  private LocalDateTime expireTime;
+}

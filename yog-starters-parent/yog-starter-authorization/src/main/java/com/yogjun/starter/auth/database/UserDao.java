@@ -12,5 +12,5 @@ public interface UserDao {
   void save(UserDTO userDTO);
 
   /** 根据用户名密码查询 */
-  UserDTO getByUserNameAndPassword(String username, String password);
+  UserDTO getOne(UserDTO userDTO);
 }

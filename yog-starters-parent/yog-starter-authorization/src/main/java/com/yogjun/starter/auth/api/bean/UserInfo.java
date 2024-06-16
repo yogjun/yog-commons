@@ -1,6 +1,6 @@
 package com.yogjun.starter.auth.api.bean;
 
-import lombok.Data;
+import lombok.*;
 
 /**
  * {@link UserInfo} 用户信息
@@ -9,6 +9,10 @@ import lombok.Data;
  * @version ${project.version} - 2024/6/11
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
+@EqualsAndHashCode(callSuper = false)
 public class UserInfo {
   /** 唯一标识 */
   private Long id;

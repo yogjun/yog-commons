@@ -30,8 +30,7 @@ public class UserManageService {
   }
 
   public UserDTO login(LoginRequest request) {
-    UserDTO userDTO =
-        userDao.getByUserNameAndPassword(request.getUsername(), request.getPassword());
+    UserDTO userDTO = userDao.getOne(BeanUtil.createAndCopy(request, UserDTO.class));
     if (null == userDTO) {
       throw new YogException("账号不存在或密码错误");
     }
