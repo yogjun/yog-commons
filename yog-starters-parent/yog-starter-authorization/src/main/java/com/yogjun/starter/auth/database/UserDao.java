@@ -10,4 +10,7 @@ public interface UserDao {
 
   /** 保存用户信息 */
   void save(UserDTO userDTO);
+
+  /** 根据用户名密码查询 */
+  UserDTO getByUserNameAndPassword(String username, String password);
 }

@@ -1,8 +1,10 @@
 package com.yogjun.starter.auth.endpoint;
 
+import com.yogjun.commont.kits.BeanUtil;
 import com.yogjun.starter.auth.api.reqeust.LoginRequest;
 import com.yogjun.starter.auth.api.reqeust.SignupRequest;
 import com.yogjun.starter.auth.api.response.LoginResponse;
+import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.service.UserManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,14 +26,13 @@ public class UserManageEndpoint {
 
   @PostMapping("/signup")
   public LoginResponse signup(@RequestBody SignupRequest request) {
-    // todo 防重复提交
-    userManageService.signup(request);
-    return null;
+    UserDTO userDTO = userManageService.signup(request);
+    return BeanUtil.createAndCopy(userDTO, LoginResponse.class);
   }
 
   @PostMapping("/login")
   public LoginResponse login(@RequestBody LoginRequest request) {
-    userManageService.login(request);
-    return null;
+    UserDTO userDTO = userManageService.login(request);
+    return BeanUtil.createAndCopy(userDTO, LoginResponse.class);
   }
 }

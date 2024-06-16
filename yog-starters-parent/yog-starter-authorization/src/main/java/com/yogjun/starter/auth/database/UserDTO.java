@@ -10,4 +10,6 @@ import lombok.Data;
  * @version ${project.version} - 2024/6/12
  */
 @Data
-public class UserDTO extends UserInfo {}
+public class UserDTO extends UserInfo {
+  private String sessionId;
+}

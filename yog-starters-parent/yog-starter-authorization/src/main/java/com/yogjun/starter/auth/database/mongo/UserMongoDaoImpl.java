@@ -1,10 +1,13 @@
 package com.yogjun.starter.auth.database.mongo;
 
+import com.yogjun.api.commons.repository.BasePO;
 import com.yogjun.commont.kits.BeanUtil;
 import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.database.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -27,5 +30,15 @@ public class UserMongoDaoImpl implements UserDao {
       po.preUpdate();
     }
     mongoTemplate.save(po);
+  }
+
+  @Override
+  public UserDTO getByUserNameAndPassword(String username, String password) {
+    Criteria criteria = Criteria.where(BasePO.Fields.deleted).ne(true);
+    Query query = new Query(criteria);
+    query.addCriteria(Criteria.where("username").is(username));
+    query.addCriteria(Criteria.where("password").is(password));
+    UserPO po = mongoTemplate.findOne(query, UserPO.class);
+    return BeanUtil.createAndCopy(po, UserDTO.class);
   }
 }

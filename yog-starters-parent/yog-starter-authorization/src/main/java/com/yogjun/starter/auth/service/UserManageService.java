@@ -1,5 +1,6 @@
 package com.yogjun.starter.auth.service;
 
+import com.yogjun.api.exception.YogException;
 import com.yogjun.commont.kits.BeanUtil;
 import com.yogjun.starter.auth.api.reqeust.LoginRequest;
 import com.yogjun.starter.auth.api.reqeust.SignupRequest;
@@ -29,7 +30,13 @@ public class UserManageService {
   }
 
   public UserDTO login(LoginRequest request) {
-    userUtil.generateSession(1l);
-    return null;
+    UserDTO userDTO =
+        userDao.getByUserNameAndPassword(request.getUsername(), request.getPassword());
+    if (null == userDTO) {
+      throw new YogException("账号不存在或密码错误");
+    }
+    String sesseionId = userUtil.generateSession(userDTO.getId());
+    userDTO.setSessionId(sesseionId);
+    return userDTO;
   }
 }

@@ -8,4 +8,7 @@ package com.yogjun.starter.auth.cache;
  */
 public interface CacheDao {
 
+  <V> void put(String key, V value);
+
+  <V> V get(String key);
 }

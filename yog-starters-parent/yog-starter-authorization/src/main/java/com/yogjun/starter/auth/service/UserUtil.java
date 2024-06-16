@@ -14,10 +14,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserUtil {
 
+  public static final String CACHE_PREFIX = "yogtoken:";
+
   @Autowired private CacheDao cacheDao;
 
   public String generateSession(Long userId) {
     String sessionId = IdUtil.fastSimpleUUID();
+    cacheDao.put(CACHE_PREFIX + "_" + sessionId, userId);
     return sessionId;
   }
 }
