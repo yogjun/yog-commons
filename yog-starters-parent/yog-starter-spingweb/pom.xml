@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-api-commons</artifactId>
+        <artifactId>yog-starters-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-api-commons-bean</artifactId>
+    <artifactId>yog-starter-spingweb</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -20,19 +20,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.10.1</version>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-api-commons-bean</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>${spring.framework.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+            <artifactId>spring-webmvc</artifactId>
             <version>${spring.framework.version}</version>
         </dependency>
     </dependencies>
+
 </project>
