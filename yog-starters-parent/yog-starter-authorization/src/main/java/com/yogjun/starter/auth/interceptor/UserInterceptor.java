@@ -13,7 +13,9 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotatedElementUtils;
+import org.springframework.core.annotation.Order;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -23,6 +25,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
  * @author <a href="mailto:280536928@qq.com">yogjun</a>
  * @version ${project.version} - 2024/6/12
  */
+@Order(Ordered.LOWEST_PRECEDENCE - 50)
 @Slf4j
 public class UserInterceptor implements HandlerInterceptor {
 
@@ -35,8 +38,8 @@ public class UserInterceptor implements HandlerInterceptor {
   }
 
   @Override
-  public boolean preHandle(
-      HttpServletRequest request, HttpServletResponse response, Object handler) {
+  public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
+      throws Exception {
 
     if (handler instanceof HandlerMethod
         && CollUtil.isNotEmpty(
