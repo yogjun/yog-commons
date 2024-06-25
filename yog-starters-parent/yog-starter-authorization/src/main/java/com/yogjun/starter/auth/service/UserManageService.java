@@ -1,5 +1,6 @@
 package com.yogjun.starter.auth.service;
 
+import cn.hutool.core.util.IdUtil;
 import com.yogjun.api.exception.YogException;
 import com.yogjun.commont.kits.BeanUtil;
 import com.yogjun.starter.auth.api.reqeust.LoginRequest;
@@ -25,6 +26,7 @@ public class UserManageService {
   public UserDTO signup(SignupRequest request) {
     UserDTO userDTO = new UserDTO();
     BeanUtils.copyProperties(request, userDTO);
+    userDTO.setId(IdUtil.getSnowflakeNextId());
     userDao.save(userDTO);
     return login(BeanUtil.createAndCopy(userDTO, LoginRequest.class));
   }

@@ -6,7 +6,7 @@ import com.yogjun.starter.auth.api.reqeust.SignupRequest;
 import com.yogjun.starter.auth.api.response.LoginResponse;
 import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.service.UserManageService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("/user")
 @RestController
+@ConditionalOnWebApplication
 public class UserManageEndpoint {
+  private UserManageService userManageService;
 
-  @Autowired private UserManageService userManageService;
+  public UserManageEndpoint(UserManageService userManageService) {
+    this.userManageService = userManageService;
+  }
 
   @PostMapping("/signup")
   public LoginResponse signup(@RequestBody SignupRequest request) {

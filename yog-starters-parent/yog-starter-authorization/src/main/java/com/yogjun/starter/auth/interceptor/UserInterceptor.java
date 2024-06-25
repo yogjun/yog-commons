@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 import org.springframework.core.annotation.Order;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -27,6 +28,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
  */
 @Order(Ordered.LOWEST_PRECEDENCE - 50)
 @Slf4j
+@Component
 public class UserInterceptor implements HandlerInterceptor {
 
   public static final String SESSION_ID = Constants.AUTH_TOKEN_KEY;
