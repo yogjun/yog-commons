@@ -15,4 +15,6 @@ import org.springframework.boot.context.properties.NestedConfigurationProperty;
 public class YogWebConfigProperties {
 
   @NestedConfigurationProperty private ResponseConfig response = new ResponseConfig();
+
+  @NestedConfigurationProperty private ExceptionConfig exception = new ExceptionConfig();
 }

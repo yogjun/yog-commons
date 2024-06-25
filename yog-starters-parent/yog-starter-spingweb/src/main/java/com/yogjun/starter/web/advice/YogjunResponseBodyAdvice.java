@@ -1,6 +1,6 @@
 package com.yogjun.starter.web.advice;
 
-import com.yogjun.api.commons.bean.bean.ResponseEntity;
+import com.yogjun.api.commons.bean.bean.YogResponseEntity;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -35,7 +35,7 @@ public class YogjunResponseBodyAdvice extends AbstractAdvice implements Response
     if (checkIgnoreURL(request.getURI().getPath())) {
       return body;
     }
-    return ResponseEntity.builder()
+    return YogResponseEntity.builder()
         .code(getProperties().getResponse().getDefaultSuccessResponseCode())
         .data(body)
         .build();

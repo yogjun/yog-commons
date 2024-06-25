@@ -34,5 +34,14 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.framework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-api-exception</artifactId>
+        </dependency>
     </dependencies>
 </project>

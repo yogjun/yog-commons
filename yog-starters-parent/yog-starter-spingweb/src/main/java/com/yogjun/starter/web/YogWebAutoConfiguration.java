@@ -1,7 +1,10 @@
 package com.yogjun.starter.web;
 
+import com.yogjun.starter.web.advice.YogExceptionAdvice;
+import com.yogjun.starter.web.advice.YogjunResponseBodyAdvice;
 import com.yogjun.starter.web.config.YogWebConfigProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -14,4 +17,13 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(YogWebConfigProperties.class)
 public class YogWebAutoConfiguration {
 
+  @Bean
+  public YogjunResponseBodyAdvice YogjunResponseBodyAdvice() {
+    return new YogjunResponseBodyAdvice();
+  }
+
+  @Bean
+  public YogExceptionAdvice YogExceptionAdvice() {
+    return new YogExceptionAdvice();
+  }
 }
