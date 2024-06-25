@@ -1,12 +1,16 @@
 package com.yogjun.starter.web.advice;
 
+import cn.hutool.core.util.StrUtil;
+import com.yogjun.api.commons.bean.base.YogConstants;
 import com.yogjun.api.commons.bean.bean.YogResponseEntity;
 import com.yogjun.api.exception.BizException;
+import com.yogjun.api.exception.CompatibleYogException;
 import com.yogjun.api.exception.YogException;
 import com.yogjun.starter.web.config.YogWebConfigProperties;
 import java.lang.reflect.Constructor;
 import java.util.Map;
 import java.util.Optional;
+import javax.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.logging.LogLevel;
 import org.springframework.http.HttpStatus;
@@ -15,6 +19,8 @@ import org.springframework.lang.Nullable;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Slf4j
 @ControllerAdvice
@@ -158,6 +164,76 @@ public class YogExceptionAdvice extends AbstractAdvice {
     printStackTrace(e);
 
     handlerException(e);
+
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .body(
+            YogResponseEntity.fail(
+                getProperties().getException().getDefaultExceptionResponseCode(), e));
+  }
+
+  /**
+   * 框架顶级异常
+   *
+   * @param e exception
+   * @return 通用返回值
+   */
+  @ExceptionHandler(value = YogException.class)
+  public ResponseEntity<?> yogException(YogException e) {
+
+    printStackTrace(e);
+
+    Optional<ResponseEntity<?>> o = handlerException(e);
+    if (o.isPresent()) {
+      return o.get();
+    }
+
+    if (e instanceof CompatibleYogException) {
+      // COMPATIBLE: 兼容性异常
+      CompatibleYogException cme = (CompatibleYogException) e;
+
+      int httpStatusCode = cme.httpStatusCode();
+
+      // Adapt Fix by @Jake : if request invoked by service feign client , revert http code with
+      // 500.
+      try {
+        ServletRequestAttributes attributes =
+            (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes != null) {
+          HttpServletRequest request = attributes.getRequest();
+          // check request#header#MIXMICRO_SERVICE_INVOKE_HEADER value
+          if (StrUtil.isNotBlank(request.getHeader(YogConstants.YOG_SERVICE_INVOKE_HEADER))
+              || StrUtil.isNotBlank(
+                  request.getHeader(YogConstants.YOG_SERVICE_FEIGN_INVOKE_HEADER))) {
+            httpStatusCode = HttpStatus.INTERNAL_SERVER_ERROR.value();
+          }
+        }
+      } catch (Exception ignored) {
+      }
+
+      return ResponseEntity.status(httpStatusCode)
+          .body(
+              YogResponseEntity.builder()
+                  .message(cme.getMessage())
+                  .data(cme.data())
+                  .code(cme.code())
+                  .build());
+    }
+
+    return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+        .body(
+            YogResponseEntity.fail(
+                getProperties().getException().getDefaultExceptionResponseCode(), e));
+  }
+
+  /** 最底层异常拦截 */
+  @ExceptionHandler(value = Exception.class)
+  public ResponseEntity<?> exception(Exception e) {
+    printStackTrace(e);
+
+    Optional<ResponseEntity<?>> o = handlerException(e);
+    if (o.isPresent()) {
+      return o.get();
+    }
 
     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
         .body(
