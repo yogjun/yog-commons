@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author <a href="mailto:280536928@qq.com">yogjun</a>
  * @version ${project.version} - 2024/6/13
  */
-@RequestMapping("/user")
+@RequestMapping("/yog/user")
 @RestController
 @ConditionalOnWebApplication
 public class UserManageEndpoint {
