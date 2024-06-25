@@ -13,7 +13,6 @@ import org.springframework.lang.Nullable;
  * @author <a href="mailto:280536928@qq.com">yogjun</a>
  * @version ${project.version} - 2024/6/9
  */
-@Builder
 public class CompatibleYogException extends YogException {
 
   /**
@@ -21,14 +20,14 @@ public class CompatibleYogException extends YogException {
    *
    * @see org.springframework.http.HttpStatus
    */
-  @Builder.Default private HttpStatus httpStatus = OK;
+  private HttpStatus httpStatus = OK;
 
   /**
    * 业务处理错误识别代码，默认：-1
    *
    * <p>
    */
-  @Builder.Default private int code = -1;
+  private int code = -1;
 
   /**
    * 业务异常，携带的数据体
