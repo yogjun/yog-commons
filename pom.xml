@@ -72,6 +72,11 @@
                 <artifactId>yog-starter-spingweb</artifactId>
                 <version>${revision}</version>
             </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-enhance-parent</artifactId>
+                <version>${revision}</version>
+            </dependency>
             <!-- Spring Boot Dependency  -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
