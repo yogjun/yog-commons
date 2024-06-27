@@ -59,6 +59,11 @@
             </dependency>
             <dependency>
                 <groupId>com.yogjun</groupId>
+                <artifactId>yog-starter-cache</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
                 <artifactId>yog-api-commons-repository</artifactId>
                 <version>${revision}</version>
             </dependency>

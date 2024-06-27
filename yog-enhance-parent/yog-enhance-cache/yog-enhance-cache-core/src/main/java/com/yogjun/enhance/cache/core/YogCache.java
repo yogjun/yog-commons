@@ -3,6 +3,8 @@ package com.yogjun.enhance.cache.core;
 import com.yogjun.enhance.cache.core.bean.CacheGetResult;
 import com.yogjun.enhance.cache.core.bean.CacheResult;
 import com.yogjun.enhance.cache.core.exception.CacheInvokeException;
+
+import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -12,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @version ${project.version} - 2024/6/27
  */
 public interface YogCache<K, V> {
-  default void put(K key, V value, long expireAfterWrite, TimeUnit timeUnit) {
+  default void put(K key, V value, long expireAfterWrite, ChronoUnit timeUnit) {
     PUT(key, value, expireAfterWrite, timeUnit);
   }
 
@@ -31,7 +33,7 @@ public interface YogCache<K, V> {
 
   CacheGetResult<V> GET(K key);
 
-  CacheResult PUT(K key, V value, long expireAfterWrite, TimeUnit timeUnit);
+  CacheResult PUT(K key, V value, long expireAfterWrite, ChronoUnit timeUnit);
 
   CacheResult REMOVE(K key);
 }

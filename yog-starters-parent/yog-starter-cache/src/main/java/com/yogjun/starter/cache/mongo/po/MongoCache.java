@@ -1,4 +1,4 @@
-package com.yogjun.starter.cache.mongo;
+package com.yogjun.starter.cache.mongo.po;
 
 import java.time.LocalDateTime;
 import javax.persistence.Id;

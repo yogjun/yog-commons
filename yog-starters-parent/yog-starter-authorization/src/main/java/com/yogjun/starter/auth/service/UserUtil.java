@@ -1,8 +1,11 @@
 package com.yogjun.starter.auth.service;
 
 import cn.hutool.core.util.IdUtil;
-import com.yogjun.starter.auth.cache.CacheDao;
+import com.yogjun.enhance.cache.core.YogCache;
+import com.yogjun.starter.cache.YogCacheSourceType;
+import java.time.temporal.ChronoUnit;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -16,11 +19,14 @@ public class UserUtil {
 
   public static final String CACHE_PREFIX = "yogtoken:";
 
-  @Autowired private CacheDao cacheDao;
+  //  @Autowired private CacheDao cacheDao;
+  @Autowired
+  @Qualifier(YogCacheSourceType.mongoCache)
+  private YogCache<String, Long> cacheDao;
 
   public String generateSession(Long userId) {
     String sessionId = IdUtil.fastSimpleUUID();
-    cacheDao.put(CACHE_PREFIX + "_" + sessionId, userId);
+    cacheDao.put(CACHE_PREFIX + "_" + sessionId, userId, 3, ChronoUnit.DAYS);
     return sessionId;
   }
 }
