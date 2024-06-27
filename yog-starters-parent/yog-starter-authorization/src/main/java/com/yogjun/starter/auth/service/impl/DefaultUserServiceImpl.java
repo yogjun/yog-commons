@@ -1,12 +1,14 @@
 package com.yogjun.starter.auth.service.impl;
 
 import com.yogjun.commont.kits.BeanUtil;
+import com.yogjun.enhance.cache.core.YogCache;
 import com.yogjun.starter.auth.api.bean.UserInfo;
-import com.yogjun.starter.auth.cache.CacheDao;
 import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.database.UserDao;
 import com.yogjun.starter.auth.service.UserService;
+import com.yogjun.starter.cache.YogCacheSourceType;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,8 +19,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class DefaultUserServiceImpl implements UserService {
-
-  @Autowired private CacheDao cacheDao;
+  @Autowired
+  @Qualifier(YogCacheSourceType.mongoCache)
+  private YogCache<String, Long> cacheDao;
   @Autowired private UserDao userDao;
 
   @Override

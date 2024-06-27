@@ -19,7 +19,6 @@ public class UserUtil {
 
   public static final String CACHE_PREFIX = "yogtoken:";
 
-  //  @Autowired private CacheDao cacheDao;
   @Autowired
   @Qualifier(YogCacheSourceType.mongoCache)
   private YogCache<String, Long> cacheDao;
