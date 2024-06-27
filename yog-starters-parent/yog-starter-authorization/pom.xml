@@ -21,10 +21,6 @@
     <dependencies>
         <dependency>
             <groupId>com.yogjun</groupId>
-            <artifactId>yog-enhance-parent</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.yogjun</groupId>
             <artifactId>yog-api-commons-repository</artifactId>
         </dependency>
         <dependency>
