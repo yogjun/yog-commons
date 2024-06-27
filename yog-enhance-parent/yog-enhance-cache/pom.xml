@@ -5,17 +5,16 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-commons</artifactId>
+        <artifactId>yog-enhance-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-enhance-parent</artifactId>
+    <artifactId>yog-enhance-cache</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>yog-enhance-email</module>
-        <module>yog-enhance-pay</module>
-        <module>yog-enhance-cache</module>
+        <module>yog-enhance-cache-api</module>
+        <module>yog-enhance-cache-core</module>
     </modules>
 
     <properties>
@@ -24,11 +23,14 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.yogjun</groupId>
-            <artifactId>yog-api-enum</artifactId>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-enhance-cache-api</artifactId>
+                <version>${revision}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

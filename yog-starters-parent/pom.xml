@@ -16,6 +16,7 @@
         <module>yog-starter-authorization</module>
         <module>yog-starter-i18n</module>
         <module>yog-starter-spingweb</module>
+        <module>yog-starter-cache</module>
     </modules>
 
     <properties>
@@ -30,6 +31,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
                 <version>${spring.boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
+                <artifactId>yog-enhance-cache-core</artifactId>
+                <version>${revision}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

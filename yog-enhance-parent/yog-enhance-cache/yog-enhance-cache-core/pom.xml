@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-kits-parent</artifactId>
+        <artifactId>yog-enhance-cache</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-kits-mock</artifactId>
+    <artifactId>yog-enhance-cache-core</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -21,19 +21,8 @@
     <dependencies>
         <dependency>
             <groupId>com.yogjun</groupId>
-            <artifactId>yog-kits-common</artifactId>
-            <version>${revision}</version>
+            <artifactId>yog-enhance-cache-api</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>org.mockito</groupId>-->
-        <!--            <artifactId>mockito-core</artifactId>-->
-        <!--            <version>2.7.19</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>net.andreinc</groupId>-->
-        <!--            <artifactId>mockneat</artifactId>-->
-        <!--            <version>0.4.8</version>-->
-        <!--        </dependency>-->
     </dependencies>
 
 </project>
