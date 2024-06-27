@@ -27,10 +27,7 @@ public class MongoCacheDaoImpl<K, V> implements YogCache<K, V> {
 
   @Override
   public CacheGetResult<V> GET(K key) {
-    Criteria criteria = new Criteria();
-    criteria.and("key").is(key);
-    Query query = new Query(criteria);
-    MongoCache mongoCache = mongoTemplate.findOne(query, MongoCache.class);
+    MongoCache mongoCache = getByKey(key);
     if (mongoCache == null) {
       return CacheGetResult.NOT_EXISTS_WITHOUT_MSG;
     }
@@ -45,20 +42,26 @@ public class MongoCacheDaoImpl<K, V> implements YogCache<K, V> {
 
   @Override
   public CacheResult PUT(K key, V value, long expireAfterWrite, ChronoUnit timeUnit) {
-    MongoCache<K, V> mongoCache = new MongoCache<K, V>();
-    mongoCache.setId(IdUtil.getSnowflakeNextIdStr());
+    MongoCache mongoCache = getByKey(key);
+    if (mongoCache == null) {
+      mongoCache = new MongoCache<K, V>();
+      mongoCache.setId(IdUtil.getSnowflakeNextIdStr());
+    }
     mongoCache.setKey(key);
     mongoCache.setValue(value);
     LocalDateTime now = LocalDateTime.now();
     mongoCache.setCreateTime(now);
     mongoCache.setExpireTime(now.plus(expireAfterWrite, timeUnit));
-    //    mongoTemplate.save(mongoCache);
+    mongoTemplate.save(mongoCache);
+    return CacheResult.SUCCESS_WITHOUT_MSG;
+  }
 
+  private MongoCache getByKey(K key) {
     Criteria criteria = new Criteria();
     criteria.and("key").is(key);
     Query query = new Query(criteria);
-    mongoTemplate.findAndReplace(query, mongoCache);
-    return CacheResult.SUCCESS_WITHOUT_MSG;
+    MongoCache mongoCache = mongoTemplate.findOne(query, MongoCache.class);
+    return mongoCache;
   }
 
   @Override
