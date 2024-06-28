@@ -3,9 +3,7 @@ package com.yogjun.enhance.cache.core;
 import com.yogjun.enhance.cache.core.bean.CacheGetResult;
 import com.yogjun.enhance.cache.core.bean.CacheResult;
 import com.yogjun.enhance.cache.core.exception.CacheInvokeException;
-
 import java.time.temporal.ChronoUnit;
-import java.util.concurrent.TimeUnit;
 
 /**
  * {@link YogCache}
@@ -14,6 +12,11 @@ import java.util.concurrent.TimeUnit;
  * @version ${project.version} - 2024/6/27
  */
 public interface YogCache<K, V> {
+
+  default void put(K key, V value) {
+    PUT(key, value, 1, ChronoUnit.DAYS);
+  }
+
   default void put(K key, V value, long expireAfterWrite, ChronoUnit timeUnit) {
     PUT(key, value, expireAfterWrite, timeUnit);
   }

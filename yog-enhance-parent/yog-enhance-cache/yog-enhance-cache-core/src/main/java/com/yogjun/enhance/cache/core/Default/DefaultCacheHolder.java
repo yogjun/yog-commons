@@ -1,6 +1,5 @@
-package com.yogjun.starter.cache.local;
+package com.yogjun.enhance.cache.core.Default;
 
-import com.yogjun.enhance.cache.api.YogCacheSourceType;
 import com.yogjun.enhance.cache.core.YogCache;
 import com.yogjun.enhance.cache.core.bean.CacheGetResult;
 import com.yogjun.enhance.cache.core.bean.CacheResult;
@@ -8,22 +7,20 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import org.springframework.stereotype.Repository;
 
 /**
- * {@link LocalCacheDaoImpl}
+ * {@link DefaultCacheHolder}
  *
  * @author <a href="mailto:280536928@qq.com">yogjun</a>
  * @version ${project.version} - 2024/6/13
  */
-@Repository(YogCacheSourceType.localCache)
-public class LocalCacheDaoImpl<K, V> implements YogCache<K, V> {
+public class DefaultCacheHolder<K, V> implements YogCache<K, V> {
 
-  private final Map<K, LocalCache<K, V>> cache = new ConcurrentHashMap<>();
+  private final Map<K, DefaultCache<K, V>> cache = new ConcurrentHashMap<>();
 
   @Override
   public CacheGetResult<V> GET(K key) {
-    LocalCache LocalCache = getByKey(key);
+    DefaultCache LocalCache = getByKey(key);
     if (LocalCache == null) {
       return CacheGetResult.NOT_EXISTS_WITHOUT_MSG;
     }
@@ -38,7 +35,7 @@ public class LocalCacheDaoImpl<K, V> implements YogCache<K, V> {
 
   @Override
   public CacheResult PUT(K key, V value, long expireAfterWrite, ChronoUnit timeUnit) {
-    LocalCache LocalCache = new LocalCache<K, V>();
+    DefaultCache LocalCache = new DefaultCache<K, V>();
     LocalCache.setKey(key);
     LocalCache.setValue(value);
     LocalDateTime now = LocalDateTime.now();
@@ -48,8 +45,8 @@ public class LocalCacheDaoImpl<K, V> implements YogCache<K, V> {
     return CacheResult.SUCCESS_WITHOUT_MSG;
   }
 
-  private LocalCache getByKey(K key) {
-    LocalCache LocalCache = cache.get(key);
+  private DefaultCache getByKey(K key) {
+    DefaultCache LocalCache = cache.get(key);
     return LocalCache;
   }
 

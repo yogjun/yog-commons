@@ -2,7 +2,7 @@ package com.yogjun.starter.auth.service;
 
 import cn.hutool.core.util.IdUtil;
 import com.yogjun.enhance.cache.core.YogCache;
-import com.yogjun.starter.cache.YogCacheSourceType;
+import com.yogjun.enhance.cache.api.YogCacheSourceType;
 import java.time.temporal.ChronoUnit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

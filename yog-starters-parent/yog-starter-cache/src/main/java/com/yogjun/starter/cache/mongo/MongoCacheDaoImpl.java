@@ -4,7 +4,7 @@ import cn.hutool.core.util.IdUtil;
 import com.yogjun.enhance.cache.core.YogCache;
 import com.yogjun.enhance.cache.core.bean.CacheGetResult;
 import com.yogjun.enhance.cache.core.bean.CacheResult;
-import com.yogjun.starter.cache.YogCacheSourceType;
+import com.yogjun.enhance.cache.api.YogCacheSourceType;
 import com.yogjun.starter.cache.mongo.po.MongoCache;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;

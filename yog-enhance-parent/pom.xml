@@ -29,6 +29,10 @@
             <groupId>com.yogjun</groupId>
             <artifactId>yog-api-enum</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-kits-common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

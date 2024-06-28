@@ -6,7 +6,7 @@ import com.yogjun.starter.auth.api.bean.UserInfo;
 import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.database.UserDao;
 import com.yogjun.starter.auth.service.UserService;
-import com.yogjun.starter.cache.YogCacheSourceType;
+import com.yogjun.enhance.cache.api.YogCacheSourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
