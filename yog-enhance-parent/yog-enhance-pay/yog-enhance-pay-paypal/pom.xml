@@ -16,6 +16,8 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <xk.time.version>3.2.4</xk.time.version>
+        <bc.version>1.70</bc.version>
     </properties>
 
     <dependencies>
@@ -23,6 +25,19 @@
             <groupId>com.yogjun</groupId>
             <artifactId>yog-enhance-cache-core</artifactId>
             <version>${revision}</version>
+        </dependency>
+
+        <!-- 开源多维码生成工具 -->
+        <dependency>
+            <groupId>com.github.xkzhangsan</groupId>
+            <artifactId>xk-time</artifactId>
+            <version>${xk.time.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>${bc.version}</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
