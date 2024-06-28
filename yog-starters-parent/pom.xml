@@ -35,6 +35,11 @@
             </dependency>
             <dependency>
                 <groupId>com.yogjun</groupId>
+                <artifactId>yog-starter-authorization-auth</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.yogjun</groupId>
                 <artifactId>yog-enhance-cache-core</artifactId>
                 <version>${revision}</version>
             </dependency>

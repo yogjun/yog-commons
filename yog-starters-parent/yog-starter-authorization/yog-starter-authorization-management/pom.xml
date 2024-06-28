@@ -5,17 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-starters-parent</artifactId>
-        <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
+        <artifactId>yog-starter-authorization</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>yog-starter-authorization</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>yog-starter-authorization-auth</module>
-        <module>yog-starter-authorization-management</module>
-    </modules>
+    <artifactId>yog-starter-authorization-management</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -26,11 +20,8 @@
     <dependencies>
         <dependency>
             <groupId>com.yogjun</groupId>
-            <artifactId>yog-starter-spingweb</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.yogjun</groupId>
-            <artifactId>yog-starter-cache</artifactId>
+            <artifactId>yog-starter-authorization-auth</artifactId>
         </dependency>
     </dependencies>
+
 </project>
