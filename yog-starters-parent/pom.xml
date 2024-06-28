@@ -17,6 +17,7 @@
         <module>yog-starter-i18n</module>
         <module>yog-starter-spingweb</module>
         <module>yog-starter-cache</module>
+        <module>yog-starter-email</module>
     </modules>
 
     <properties>

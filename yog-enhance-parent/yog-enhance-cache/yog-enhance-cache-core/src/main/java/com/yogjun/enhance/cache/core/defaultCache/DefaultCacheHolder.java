@@ -1,4 +1,4 @@
-package com.yogjun.enhance.cache.core.Default;
+package com.yogjun.enhance.cache.core.defaultCache;
 
 import com.yogjun.enhance.cache.core.YogCache;
 import com.yogjun.enhance.cache.core.bean.CacheGetResult;

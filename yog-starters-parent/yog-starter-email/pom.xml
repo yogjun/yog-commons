@@ -5,12 +5,12 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-enhance-parent</artifactId>
+        <artifactId>yog-starters-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-enhance-email</artifactId>
+    <artifactId>yog-starter-email</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

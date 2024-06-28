@@ -1,4 +1,4 @@
-spring:
+spring-demo:
   mail:
     host: smtphz.qiye.163.com
     port: 994

@@ -3,7 +3,7 @@ package com.yogjun.enhance.pay.paypal.token;
 import cn.hutool.core.util.StrUtil;
 import com.yogjun.commont.kits.RetryUtils;
 import com.yogjun.commont.kits.http.YogHttpResponse;
-import com.yogjun.enhance.cache.core.Default.DefaultCacheHolder;
+import com.yogjun.enhance.cache.core.defaultCache.DefaultCacheHolder;
 import com.yogjun.enhance.cache.core.YogCache;
 import com.yogjun.enhance.pay.paypal.PayPalApi;
 import com.yogjun.enhance.pay.paypal.config.PayPalApiConfig;

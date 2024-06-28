@@ -13,7 +13,6 @@
     <artifactId>yog-enhance-parent</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>yog-enhance-email</module>
         <module>yog-enhance-pay</module>
         <module>yog-enhance-cache</module>
     </modules>

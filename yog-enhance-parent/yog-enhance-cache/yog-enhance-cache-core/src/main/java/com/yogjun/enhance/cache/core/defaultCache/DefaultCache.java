@@ -1,4 +1,4 @@
-package com.yogjun.enhance.cache.core.Default;
+package com.yogjun.enhance.cache.core.defaultCache;
 
 import java.time.LocalDateTime;
 import lombok.Getter;
