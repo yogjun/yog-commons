@@ -1,5 +1,6 @@
 package com.yogjun.starter.auth.database.mongo;
 
+import cn.hutool.core.util.IdUtil;
 import cn.hutool.core.util.StrUtil;
 import com.yogjun.api.commons.repository.BasePO;
 import com.yogjun.commont.kits.BeanUtil;

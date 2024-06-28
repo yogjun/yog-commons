@@ -3,6 +3,8 @@ package com.yogjun.api.commons.repository;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.Id;
+
+import cn.hutool.core.util.IdUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -38,11 +40,15 @@ public class BasePO implements Serializable {
 
   /** handler before data insert into database */
   public void preInsert() {
+    if (id == null) {
+      this.id = IdUtil.getSnowflakeNextId();
+    }
+    LocalDateTime now = LocalDateTime.now();
     if (null == this.updateTime) {
-      this.updateTime = LocalDateTime.now();
+      this.updateTime = now;
     }
     if (null == this.createTime) {
-      this.createTime = this.updateTime;
+      this.createTime = now;
     }
     if (null == this.deleted) {
       this.deleted = false; // 默认未删除

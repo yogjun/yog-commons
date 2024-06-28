@@ -1,5 +1,6 @@
 package com.yogjun.starter.auth.api.bean;
 
+import java.time.LocalDateTime;
 import lombok.*;
 
 /**
@@ -28,4 +29,7 @@ public class UserInfo {
 
   /** 邮箱 */
   private String email;
+
+  private LocalDateTime createTime;
+  private LocalDateTime updateTime;
 }
