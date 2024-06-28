@@ -1,6 +1,6 @@
-package com.yogjun.enhance.email.service;
+package com.yogjun.starter.email.service;
 
-import com.yogjun.enhance.email.model.YogEmail;
+import com.yogjun.starter.email.model.YogEmail;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;

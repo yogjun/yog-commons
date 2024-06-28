@@ -1,4 +1,4 @@
-package com.yogjun.enhance.email.config;
+package com.yogjun.starter.email;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Configuration;
  * @version ${project.version} - 2024/6/9
  */
 @Configuration
-@ComponentScan("com.yogjun.enhance.email.service")
+@ComponentScan("com.yogjun.starter.email.service")
 public class YogEmailServiceConfiguration {}

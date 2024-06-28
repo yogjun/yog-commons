@@ -1,4 +1,4 @@
-package com.yogjun.enhance.email.model;
+package com.yogjun.starter.email.model;
 
 /**
  * {@link ContentType}

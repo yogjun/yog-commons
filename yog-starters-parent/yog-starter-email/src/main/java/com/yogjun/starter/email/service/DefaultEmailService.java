@@ -1,8 +1,7 @@
-package com.yogjun.enhance.email.service;
+package com.yogjun.starter.email.service;
 
 import cn.hutool.core.util.StrUtil;
-import com.yogjun.enhance.email.model.YogEmail;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.yogjun.starter.email.model.YogEmail;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
