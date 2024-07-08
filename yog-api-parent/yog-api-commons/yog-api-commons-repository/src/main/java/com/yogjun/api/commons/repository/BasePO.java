@@ -1,10 +1,9 @@
 package com.yogjun.api.commons.repository;
 
+import cn.hutool.core.util.IdUtil;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import javax.persistence.Id;
-
-import cn.hutool.core.util.IdUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -57,8 +56,6 @@ public class BasePO implements Serializable {
 
   /** handler before data update into database */
   public void preUpdate() {
-    if (null == this.updateTime) {
-      this.updateTime = LocalDateTime.now();
-    }
+    this.updateTime = LocalDateTime.now();
   }
 }

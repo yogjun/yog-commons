@@ -5,34 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-commons</artifactId>
+        <artifactId>yog-enhance-parent</artifactId>
         <version>${revision}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <artifactId>yog-enhance-parent</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>yog-enhance-pay</module>
-        <module>yog-enhance-cache</module>
-        <module>yog-enhance-statemachine</module>
-    </modules>
+    <artifactId>yog-enhance-statemachine</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.yogjun</groupId>
-            <artifactId>yog-api-enum</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.yogjun</groupId>
-            <artifactId>yog-kits-common</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>
