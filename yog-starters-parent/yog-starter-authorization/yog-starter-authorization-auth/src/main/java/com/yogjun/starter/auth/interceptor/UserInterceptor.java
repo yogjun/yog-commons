@@ -7,7 +7,7 @@ import com.yogjun.starter.auth.annotation.Identity;
 import com.yogjun.starter.auth.api.bean.UserInfo;
 import com.yogjun.starter.auth.api.constants.Constants;
 import com.yogjun.starter.auth.api.exceptions.AuthException;
-import com.yogjun.starter.auth.service.UserService;
+import com.yogjun.starter.auth.service.user.UserService;
 import java.util.Objects;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package com.yogjun.starter.auth.service;
+package com.yogjun.starter.auth.service.user;
 
 import com.yogjun.starter.auth.api.bean.UserInfo;
 

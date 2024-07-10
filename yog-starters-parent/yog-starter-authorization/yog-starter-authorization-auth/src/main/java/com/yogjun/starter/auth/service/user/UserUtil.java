@@ -1,4 +1,4 @@
-package com.yogjun.starter.auth.service;
+package com.yogjun.starter.auth.service.user;
 
 import cn.hutool.core.util.IdUtil;
 import com.yogjun.enhance.cache.core.YogCache;

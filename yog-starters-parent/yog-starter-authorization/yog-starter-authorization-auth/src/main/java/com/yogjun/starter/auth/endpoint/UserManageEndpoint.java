@@ -5,7 +5,7 @@ import com.yogjun.starter.auth.api.reqeust.LoginRequest;
 import com.yogjun.starter.auth.api.reqeust.SignupRequest;
 import com.yogjun.starter.auth.api.response.LoginResponse;
 import com.yogjun.starter.auth.database.UserDTO;
-import com.yogjun.starter.auth.service.UserManageService;
+import com.yogjun.starter.auth.service.user.UserManageService;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

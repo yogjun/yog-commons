@@ -14,17 +14,4 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.yogjun.starter.auth")
 @EnableConfigurationProperties(AuthConfiguration.class)
-public class YogAuthAutoConfiguration {
-
-  //  @ConditionalOnMissingBean(UserService.class)
-  //  @Bean
-  //  public UserService serviceUser() {
-  //    return new DefaultUserServiceImpl();
-  //  }
-  //
-  //  @ConditionalOnBean(UserService.class)
-  //  @Bean
-  //  public UserInterceptor userInterceptor(UserService userService) {
-  //    return new UserInterceptor(userService);
-  //  }
-}
+public class YogAuthAutoConfiguration {}
