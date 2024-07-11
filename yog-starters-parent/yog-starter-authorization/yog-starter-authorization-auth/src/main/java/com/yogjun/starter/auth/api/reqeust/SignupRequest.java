@@ -1,5 +1,6 @@
 package com.yogjun.starter.auth.api.reqeust;
 
+import com.yogjun.starter.auth.api.reqeust.email.VerifyEmailRequest;
 import lombok.Data;
 
 /**
@@ -14,4 +15,7 @@ public class SignupRequest {
   private String password;
   private String confirmPassword;
   private String name;
+
+  /** 邮箱验证请求 */
+  private VerifyEmailRequest verifyEmailRequest;
 }

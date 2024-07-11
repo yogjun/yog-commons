@@ -6,6 +6,7 @@ import com.yogjun.starter.auth.api.reqeust.LoginRequest;
 import com.yogjun.starter.auth.api.reqeust.SignupRequest;
 import com.yogjun.starter.auth.database.UserDTO;
 import com.yogjun.starter.auth.database.UserDao;
+import com.yogjun.starter.auth.service.email.EmailVerificationService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,12 @@ public class UserManageService {
 
   @Autowired private UserDao userDao;
   @Autowired private UserUtil userUtil;
+  @Autowired private EmailVerificationService emailVerificationService;
 
   public UserDTO signup(SignupRequest request) {
+    // 校验
+    emailVerificationService.verifyCaptcha(request.getVerifyEmailRequest());
+    // 保存用户账号
     UserDTO userDTO = new UserDTO();
     BeanUtils.copyProperties(request, userDTO);
     userDao.save(userDTO);

@@ -2,9 +2,11 @@ package com.yogjun.starter.auth.service.email;
 
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.lang.Pair;
+import cn.hutool.core.util.BooleanUtil;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HtmlUtil;
 import com.yogjun.api.exception.YogException;
+import com.yogjun.starter.auth.api.reqeust.email.VerifyEmailRequest;
 import com.yogjun.starter.auth.config.MailConfig;
 import com.yogjun.starter.auth.service.verification.VerificationService;
 import com.yogjun.starter.email.model.ContentType;
@@ -33,8 +35,14 @@ public class EmailVerificationService {
   @Autowired private VerificationService verificationService;
   @Autowired private MailConfig mailConfig;
 
-  public Boolean verifyCaptcha(String email, String verifyCode, String secret) {
-    return verificationService.verifyCode(secret, email, verifyCode);
+  public Boolean verifyCaptcha(VerifyEmailRequest request) {
+    Boolean verifyResponse =
+        verificationService.verifyCode(
+            request.getEmail(), request.getVerifyCode(), request.getSecret());
+    if (BooleanUtil.isFalse(verifyResponse)) {
+      throw new YogException("验证码错误");
+    }
+    return verifyResponse;
   }
 
   /** 发送邮箱注册验证码 */

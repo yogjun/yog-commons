@@ -1,7 +1,6 @@
 package com.yogjun.starter.auth.endpoint;
 
 import cn.hutool.core.lang.RegexPool;
-import cn.hutool.core.util.BooleanUtil;
 import cn.hutool.core.util.ReUtil;
 import com.yogjun.api.exception.YogException;
 import com.yogjun.starter.auth.api.reqeust.email.SendEmailRequest;
@@ -39,11 +38,6 @@ public class EmailVerifyEndpoint {
   /** 校验邮箱验证码 */
   @PostMapping({"/verifySmsEmailVerify"})
   public void verifySmsVerify(@RequestBody VerifyEmailRequest request) {
-    Boolean verifyResponse =
-        emailVerificationService.verifyCaptcha(
-            request.getEmail(), request.getVerifyCode(), request.getSecret());
-    if (BooleanUtil.isFalse(verifyResponse)) {
-      throw new YogException("验证码错误");
-    }
+    emailVerificationService.verifyCaptcha(request);
   }
 }
