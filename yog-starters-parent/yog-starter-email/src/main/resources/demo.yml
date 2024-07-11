@@ -17,3 +17,7 @@ spring-demo:
           starttls:
             enable: true
             required: true
+hnp:
+  mail:
+    account: <EMAIL>
+    name: yogjun

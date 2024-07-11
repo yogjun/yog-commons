@@ -32,5 +32,9 @@
             <groupId>com.yogjun</groupId>
             <artifactId>yog-starter-cache</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.yogjun</groupId>
+            <artifactId>yog-starter-email</artifactId>
+        </dependency>
     </dependencies>
 </project>
