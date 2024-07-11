@@ -3,7 +3,6 @@ package com.yogjun.enhance.pay.paypal;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.ContentType;
-import cn.hutool.http.HttpUtil;
 import com.yogjun.commont.kits.http.HttpKit;
 import com.yogjun.commont.kits.http.YogHttpResponse;
 import com.yogjun.enhance.pay.paypal.config.PayPalApiConfig;
