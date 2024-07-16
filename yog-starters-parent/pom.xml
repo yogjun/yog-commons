@@ -18,6 +18,7 @@
         <module>yog-starter-spingweb</module>
         <module>yog-starter-cache</module>
         <module>yog-starter-email</module>
+        <module>yog-starter-pay</module>
     </modules>
 
     <properties>
