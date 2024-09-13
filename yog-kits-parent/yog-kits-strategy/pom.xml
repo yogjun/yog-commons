@@ -5,18 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.yogjun</groupId>
-        <artifactId>yog-commons</artifactId>
-        <version>${revision}</version>
-        <relativePath>../pom.xml</relativePath>
+        <artifactId>yog-kits-parent</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>yog-kits-parent</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>yog-kits-common</module>
-        <module>yog-kits-mock</module>
-        <module>yog-kits-strategy</module>
-    </modules>
+    <artifactId>yog-kits-strategy</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -24,10 +17,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
-    </dependencies>
 </project>

@@ -1,3 +1,5 @@
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.List;
 import lombok.Data;
 
@@ -13,4 +15,9 @@ public class User {
   private Integer time;
   private CountryInfo countryInfo;
   private List<CountryInfo> countryInfoList;
+
+  public static void main(String[] args) throws UnsupportedEncodingException {
+    String ttt ="测试数据".concat(".xlsx");
+    System.out.println(ttt);
+  }
 }
